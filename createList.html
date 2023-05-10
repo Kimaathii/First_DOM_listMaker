@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        border: 1px solid #ddd;
+        margin: 5px;
+        padding: 10px;
+    }
+    input[type="text"]{
+        padding: 10px;
+        margin: 5px;
+    }
+    button{
+        padding: 10px;
+        margin: 5px;
+    }
+</style>
+<body>
+    <h1>list Example</h1>
+    <input type="text" id="input-field" placeholder="enter a list">
+    <button id="add-button">add</button>
+    <ul id="list-container"></ul>
+    <script>
+        let inputField = document.querySelector('#input-field');
+        let addButton = document.querySelector('#add-button');
+        let display = document.querySelector('#list-container');
+        addButton.addEventListener('click', addItem);
+        function addItem(){
+            let newItem = document.createElement('li');
+            newItem.textContent = inputField.value;
+            display.appendChild(newItem);
+            inputField.value = ''
+        }
+    </script>
+</body>
+</html>
